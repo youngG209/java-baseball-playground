@@ -1,4 +1,4 @@
-package StringCalculator;
+package stringCalculator;
 
 import java.util.Collections;
 import java.util.Map;
