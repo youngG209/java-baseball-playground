@@ -1,4 +1,5 @@
-import java.util.Optional;
+package StringCalculator;
+
 import java.util.regex.Pattern;
 
 public class StringUtils {

@@ -1,3 +1,6 @@
+package StringCalculator;
+
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -73,7 +76,7 @@ class OperatorTest {
         //given
         int firstVal = 10;
         int secondVal = 2;
-        assertThat(Operator.find(str).result(str, firstVal, secondVal)).isEqualTo(val);
+        Assertions.assertThat(Operator.find(str).result(str, firstVal, secondVal)).isEqualTo(val);
 
     }
 }

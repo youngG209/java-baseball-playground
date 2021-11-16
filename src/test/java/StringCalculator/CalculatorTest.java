@@ -1,3 +1,6 @@
+package StringCalculator;
+
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,7 +22,7 @@ class CalculatorTest {
     @CsvSource(value = {"20 / 3 * 4 - 2 : 22","2 + 3 * 4 / 2 : 10","2 + 6 * 2 / 8 : 2"},delimiter = ':')
     @ParameterizedTest
     void calculatorTest(String input, int result) {
-        assertThat(calculator.calculator(input)).isEqualTo(result);
+        Assertions.assertThat(calculator.calculator(input)).isEqualTo(result);
     }
 
     @ValueSource(strings = {"20 = 3 * 4 - 2","2 + 3 < 2 / 22"})
