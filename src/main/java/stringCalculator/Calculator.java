@@ -2,8 +2,8 @@ package stringCalculator;
 
 
 public class Calculator {
-    private Operator operator;
-    private StringUtils utils;
+    private Operator operator = Operator.PLUS;
+    private StringUtils utils = new StringUtils();
 
     public int calculator(String val) {
         String[] splitVal = utils.splitString(val);
