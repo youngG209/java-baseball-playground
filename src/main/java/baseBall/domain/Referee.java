@@ -28,7 +28,7 @@ public class Referee {
             String message = "3 스트라이크";
             return message;
         }
-        String message = ball + " 볼, " + strike + " 스트라이크";
+        String message = ball + " 볼 " + strike + " 스트라이크";
         return message;
     }
 }
