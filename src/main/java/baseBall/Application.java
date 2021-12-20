@@ -4,8 +4,10 @@ import baseBall.domain.Judgment;
 import baseBall.domain.NumberGenerator;
 import baseBall.domain.Referee;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * 객체 지향 프로그래밍
@@ -15,19 +17,29 @@ import java.util.List;
  */
 public class Application {
     public static void main(String[] args) {
-//        NumberGenerator generator = new NumberGenerator();
-//        List<Integer> numbers = generator.createRandomNumbers();
-//        System.out.println(numbers);
-
-//        Judgment judgment = new Judgment();
-//        int count = judgment.correctCount(Arrays.asList(1, 2, 3), Arrays.asList(2, 4, 3));
-//        System.out.println(count);
-
-//        boolean hasPlace = judgment.hasPlace(Arrays.asList(2, 4, 3), 0, 3);
-//        System.out.println(hasPlace);
+        NumberGenerator generator = new NumberGenerator();
+        List<Integer> computer = generator.createRandomNumbers();
 
         Referee referee = new Referee();
-        String compare = referee.compare(Arrays.asList(6, 7, 8), Arrays.asList(2, 4, 3));
-        System.out.println(compare);
+        String result = "";
+        while (!result.equals("3 스트라이크")) {
+            result = referee.compare(computer, askNumbers());
+            System.out.println(result);
+        }
+        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+    }
+
+    public static List<Integer> askNumbers() {
+        System.out.println("숫자를 입력해 주세요. : ");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.next();
+
+        List<Integer> players = new ArrayList<>();
+
+        for (String number : input.split("")) {
+            players.add(Integer.valueOf(number));
+        }
+
+        return players;
     }
 }

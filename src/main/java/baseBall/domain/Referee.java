@@ -13,16 +13,21 @@ public class Referee {
         int correctCount = judgment.correctCount(computer, player);
 
         int strike = 0;
-        for (int i = 0; i < computer.size(); i++) {
+        for (int i = 0; i < player.size(); i++) {
             if (judgment.hasPlace(computer, i, player.get(i))) {
                 strike++;
             }
         }
-        if (strike == 0) {
+        int ball = correctCount - strike;
+
+        if (correctCount == 0) {
             String message = "낫싱";
             return message;
         }
-        int ball = correctCount - strike;
+        if (strike == 3) {
+            String message = "3 스트라이크";
+            return message;
+        }
         String message = ball + " 볼, " + strike + " 스트라이크";
         return message;
     }
