@@ -18,7 +18,10 @@ public class Referee {
                 strike++;
             }
         }
-
+        if (strike == 0) {
+            String message = "낫싱";
+            return message;
+        }
         int ball = correctCount - strike;
         String message = ball + " 볼, " + strike + " 스트라이크";
         return message;

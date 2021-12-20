@@ -27,7 +27,7 @@ public class Application {
 //        System.out.println(hasPlace);
 
         Referee referee = new Referee();
-        String compare = referee.compare(Arrays.asList(1, 2, 3), Arrays.asList(2, 4, 3));
+        String compare = referee.compare(Arrays.asList(6, 7, 8), Arrays.asList(2, 4, 3));
         System.out.println(compare);
     }
 }
